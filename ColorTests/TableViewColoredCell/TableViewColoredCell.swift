@@ -13,7 +13,8 @@ class TableViewColoredCell: UITableViewCell {
     
     
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var gradientView: GradientView!
+    //@IBOutlet weak var gradientView: GradientView!
+    @IBOutlet weak var colorView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,11 +29,17 @@ class TableViewColoredCell: UITableViewCell {
         cardView.layer.shadowOpacity = 0.5
         cardView.layer.shadowOffset = CGSize(width: 5, height: 10)
         
-        gradientView.layer.cornerRadius = 20
-        gradientView.layer.masksToBounds = true
+        //gradientView.layer.cornerRadius = 20
+        //gradientView.layer.masksToBounds = true
+        colorView.layer.cornerRadius = 20
+        colorView.layer.masksToBounds = true
+    }
+    
+    func setUpColor(color: UIColor){
+        colorView.backgroundColor = color
     }
     
     func setUpColors(topColor: UIColor, bottomColor: UIColor){
-        gradientView.setColors(startColor: topColor, endColor: bottomColor)
+        //gradientView.setColors(startColor: topColor, endColor: bottomColor)
     }
 }

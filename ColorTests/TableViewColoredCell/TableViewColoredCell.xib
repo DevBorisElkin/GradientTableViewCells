@@ -23,7 +23,7 @@
                         <viewLayoutGuide key="safeArea" id="Gwi-DP-Vme"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiI-Ga-J3I" customClass="GradientView" customModule="ColorTests" customModuleProvider="target">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiI-Ga-J3I" userLabel="ColorView">
                         <rect key="frame" x="20" y="21" width="374" height="154"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="tintColor"/>
@@ -32,7 +32,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cardView" destination="qQ7-ho-Chx" id="2AU-68-Rxy"/>
-                <outlet property="gradientView" destination="ZiI-Ga-J3I" id="sui-Qp-pzS"/>
+                <outlet property="colorView" destination="ZiI-Ga-J3I" id="sRD-ZQ-lTX"/>
             </connections>
             <point key="canvasLocation" x="-43.478260869565219" y="23.772321428571427"/>
         </tableViewCell>

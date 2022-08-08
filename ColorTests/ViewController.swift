@@ -11,7 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var colorCalculator = ColorCalculator(initialColor: #colorLiteral(red: 0.6443478301, green: 0.4843137264, blue: 0.9686274529, alpha: 1), colorStepPerUnit: 0.000005)
+    //var colorCalculator = ColorCalculator(initialColor: #colorLiteral(red: 0.6443478301, green: 0.4843137264, blue: 0.9686274529, alpha: 1), colorStepPerUnit: 0.000005)
+    var colorCalculator = ColorCalculator(initialColor: #colorLiteral(red: 0.6443478301, green: 0.4843137264, blue: 0.9686274529, alpha: 1), colorStepPerUnit: 0.0005)
     var cells: [Cell]!
     var minMaxRandomHeight = (minHeight: Double(100), maxHeight: Double(300))
     
@@ -28,7 +29,9 @@ class ViewController: UIViewController {
             var randomHeight = Double.random(in: minMaxRandomHeight.minHeight...minMaxRandomHeight.maxHeight)
             var colors = colorCalculator.calculateColor(elementTopPoint: cumulativeHeight, elementBottomPoint: cumulativeHeight + randomHeight)
 
-            cells.append(Cell(height: randomHeight, colorCalculation: colors))
+            var color = colorCalculator.calculateColor(elementIndex: i)!
+            
+            cells.append(Cell(height: randomHeight, colorCalculation: colors, color: color))
             cumulativeHeight += randomHeight
         }
         
@@ -46,7 +49,8 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         
         var cellObj = cells[indexPath.row]
         
-        cell.setUpColors(topColor: cellObj.colorCalculation.topColor, bottomColor: cellObj.colorCalculation.bottomColor)
+        //cell.setUpColors(topColor: cellObj.colorCalculation.topColor, bottomColor: cellObj.colorCalculation.bottomColor)
+        cell.setUpColor(color: cellObj.color)
         
         return cell
     }
@@ -59,5 +63,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
 struct Cell {
     var height: CGFloat
     var colorCalculation: ColorCalculation!
+    var color: UIColor
 }
 
