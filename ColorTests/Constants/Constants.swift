@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class Constants {
-    /// switch between true/false to see difference
+    /// switch between true/false to see difference. Determines whether to use a gradient for each cell or a solid color
     static let useGradientForCells = true
     
     // initial color of the first UI element
