@@ -66,6 +66,7 @@
 		5261978928A07269008A35E5 /* ColorTests */ = {
 			isa = PBXGroup;
 			children = (
+				526197AF28A0CC22008A35E5 /* Images */,
 				526197AC28A094DE008A35E5 /* Helpers */,
 				526197A928A09337008A35E5 /* Constants */,
 				526197A628A0809F008A35E5 /* ColorCalculation */,
@@ -120,6 +121,13 @@
 				526197AD28A09502008A35E5 /* Constraints.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		526197AF28A0CC22008A35E5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
