@@ -11,10 +11,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //var colorCalculator = ColorCalculator(initialColor: #colorLiteral(red: 0.6443478301, green: 0.4843137264, blue: 0.9686274529, alpha: 1), colorStepPerUnit: 0.000005)
-    var colorCalculator = ColorCalculator(initialColor: #colorLiteral(red: 0.6443478301, green: 0.4843137264, blue: 0.9686274529, alpha: 1), colorStepPerUnit: 0.0005)
+    var colorCalculator = ColorCalculator(initialColor: Constants.initialColor, colorStepPerUnit: Constants.colorStepPerUnit)
+    
     var cells: [Cell]!
-    var minMaxRandomHeight = (minHeight: Double(100), maxHeight: Double(300))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +24,22 @@ class ViewController: UIViewController {
     func setUp(){
         cells = []
         var cumulativeHeight: CGFloat = 0
-        for i in 0..<500{
-            var randomHeight = Double.random(in: minMaxRandomHeight.minHeight...minMaxRandomHeight.maxHeight)
-            var colors = colorCalculator.calculateColor(elementTopPoint: cumulativeHeight, elementBottomPoint: cumulativeHeight + randomHeight)
-
-            var color = colorCalculator.calculateColor(elementIndex: i)!
+        for i in 0..<Constants.numberOfCells{
+            let randomHeight = Double.random(in:  Constants.minMaxRandomHeight.minHeight...Constants.minMaxRandomHeight.maxHeight)
+            
+            let color = colorCalculator.calculateColor(elementIndex: i)!
+            
+            let colors = colorCalculator.calculateColor(elementTopPoint: cumulativeHeight, elementBottomPoint: cumulativeHeight + randomHeight)
             
             cells.append(Cell(height: randomHeight, colorCalculation: colors, color: color))
             cumulativeHeight += randomHeight
         }
         
-        tableView.register(UINib(nibName: "TableViewColoredCell", bundle: nil), forCellReuseIdentifier: TableViewColoredCell.reuseId)
+        cells.forEach { cell in
+            cell.colorCalculation.topColor.printColorHSB()
+        }
+        
+        tableView.register(TableViewColoredCell.self, forCellReuseIdentifier: TableViewColoredCell.reuseId)
     }
 }
 
@@ -45,12 +49,15 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: TableViewColoredCell.reuseId) as! TableViewColoredCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewColoredCell.reuseId) as! TableViewColoredCell
         
-        var cellObj = cells[indexPath.row]
+        let cellObj = cells[indexPath.row]
         
-        //cell.setUpColors(topColor: cellObj.colorCalculation.topColor, bottomColor: cellObj.colorCalculation.bottomColor)
-        cell.setUpColor(color: cellObj.color)
+        if(Constants.useGradientForCells){
+            cell.setUpColors(topColor: cellObj.colorCalculation.topColor, bottomColor: cellObj.colorCalculation.bottomColor)
+        }else{
+            cell.setUpColor(color: cellObj.color)
+        }
         
         return cell
     }

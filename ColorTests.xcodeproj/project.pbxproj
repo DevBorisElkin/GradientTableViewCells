@@ -14,9 +14,10 @@
 		5261979428A0726C008A35E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5261979328A0726C008A35E5 /* Assets.xcassets */; };
 		5261979728A0726C008A35E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5261979528A0726C008A35E5 /* LaunchScreen.storyboard */; };
 		526197A028A07DE0008A35E5 /* TableViewColoredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5261979F28A07DE0008A35E5 /* TableViewColoredCell.swift */; };
-		526197A228A07DF0008A35E5 /* TableViewColoredCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526197A128A07DF0008A35E5 /* TableViewColoredCell.xib */; };
 		526197A528A07E51008A35E5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526197A428A07E51008A35E5 /* GradientView.swift */; };
 		526197A828A080AE008A35E5 /* ColorCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526197A728A080AE008A35E5 /* ColorCalculator.swift */; };
+		526197AB28A09343008A35E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526197AA28A09343008A35E5 /* Constants.swift */; };
+		526197AE28A09502008A35E5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526197AD28A09502008A35E5 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		5261979628A0726C008A35E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5261979828A0726C008A35E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5261979F28A07DE0008A35E5 /* TableViewColoredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewColoredCell.swift; sourceTree = "<group>"; };
-		526197A128A07DF0008A35E5 /* TableViewColoredCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewColoredCell.xib; sourceTree = "<group>"; };
 		526197A428A07E51008A35E5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		526197A728A080AE008A35E5 /* ColorCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCalculator.swift; sourceTree = "<group>"; };
+		526197AA28A09343008A35E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		526197AD28A09502008A35E5 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,8 @@
 		5261978928A07269008A35E5 /* ColorTests */ = {
 			isa = PBXGroup;
 			children = (
+				526197AC28A094DE008A35E5 /* Helpers */,
+				526197A928A09337008A35E5 /* Constants */,
 				526197A628A0809F008A35E5 /* ColorCalculation */,
 				526197A328A07E36008A35E5 /* CustomViews */,
 				5261979E28A07DAB008A35E5 /* TableViewColoredCell */,
@@ -82,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				5261979F28A07DE0008A35E5 /* TableViewColoredCell.swift */,
-				526197A128A07DF0008A35E5 /* TableViewColoredCell.xib */,
 			);
 			path = TableViewColoredCell;
 			sourceTree = "<group>";
@@ -101,6 +104,22 @@
 				526197A728A080AE008A35E5 /* ColorCalculator.swift */,
 			);
 			path = ColorCalculation;
+			sourceTree = "<group>";
+		};
+		526197A928A09337008A35E5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				526197AA28A09343008A35E5 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		526197AC28A094DE008A35E5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				526197AD28A09502008A35E5 /* Constraints.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526197A228A07DF0008A35E5 /* TableViewColoredCell.xib in Resources */,
 				5261979728A0726C008A35E5 /* LaunchScreen.storyboard in Resources */,
 				5261979428A0726C008A35E5 /* Assets.xcassets in Resources */,
 				5261979228A07269008A35E5 /* Main.storyboard in Resources */,
@@ -179,6 +197,8 @@
 				5261978F28A07269008A35E5 /* ViewController.swift in Sources */,
 				526197A528A07E51008A35E5 /* GradientView.swift in Sources */,
 				5261978B28A07269008A35E5 /* AppDelegate.swift in Sources */,
+				526197AE28A09502008A35E5 /* Constraints.swift in Sources */,
+				526197AB28A09343008A35E5 /* Constants.swift in Sources */,
 				5261978D28A07269008A35E5 /* SceneDelegate.swift in Sources */,
 				526197A828A080AE008A35E5 /* ColorCalculator.swift in Sources */,
 			);
